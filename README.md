@@ -38,18 +38,72 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![image](https://github.com/user-attachments/assets/f049b4e9-c2dc-4e53-ac87-2c905fd19241)
+![image](https://github.com/user-attachments/assets/9750b5d4-84a9-4ece-b3b6-754c4739e8ba)
+
+
 **Procedure**
+
 
 Write the detailed procedure here
 
+1. Write the code in Quartus software by creating a new project wizard.
+2. Run the program to get output.
+3. Then open RTL viewer and download that image.
+4. Open new file with University program VWF
+5. Set end timer and execute, then download the waveform.
+
+
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. :
 */
+      
+    module EXP_4(sum, cout, a, b, cin);
+    output sum;
+    output cout;
+    input a;
+    input b;
+    input cin;
+    //internal nets wire sl,cl,c2;
+    //Instantiate logic gate primitives
+    xor (sl,a,b);
+    and(cl,a,b);
+    xor(sum, sl, cin);
+    and (c2, sl,cin);
+    or (cout, c2,cl);
+    endmodule
+
+    module EXP_4_2 (df, bo, a, b, bin);
+    output df;
+    output bo;
+    input a;
+    input b;
+    input bin;
+    wire w1,w2,w3;
+    assign w1=a^b;
+    assign w2=(~a&b);
+    assign w3=(~w1&bin);
+    assign df=w1^bin;
+    assign bo=w2|w3;
+    endmodule
+
+Developed by: M RITHIKA
+
+RegisterNumber: 24900286
+
 
 **RTL Schematic**
+![RTL view 4_1](https://github.com/user-attachments/assets/fb4727b2-acdf-44dd-8d60-f0eec552abd5)
+![RTL view 4_2](https://github.com/user-attachments/assets/699b5f22-de82-45ac-959c-46179c67fd07)
+
+
 
 **Output Timing Waveform**
+![Waveform4_1](https://github.com/user-attachments/assets/7176b1f4-002c-4fbd-8cb7-96561c591e2f)
+![Waveform4_2](https://github.com/user-attachments/assets/26bcac15-4126-457f-8e28-713c9acb8052)
+
+
 
 **Result:**
 
