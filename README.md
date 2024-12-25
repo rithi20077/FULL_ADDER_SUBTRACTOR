@@ -1,4 +1,6 @@
-# FULL_ADDER_SUBTRACTOR
+# Ex 5 FULL_ADDER_SUBTRACTOR
+
+# DATE:24/10/2024
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
